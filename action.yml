@@ -1,0 +1,27 @@
+name: "Generate next semver tag"
+description: "Generate the next semver tag and outputs that for use in other actions"
+branding:
+  icon: "tag"
+  color: "gray-dark"
+inputs:
+  environment:
+    description: "Code environment"
+    required: false
+  fallback:
+    description: "Fallback tag to use when no previous tag can be found"
+    required: false
+  prefix:
+    description: "Prefix to query the tag by"
+    required: false
+  suffix:
+    description: "Suffix of tag"
+    required: false
+  version:
+    description: "Semver version that will be increased"
+    required: false
+outputs:
+  tag:
+    description: "Next semver tag"
+runs:
+  using: "node16"
+  main: "index.js"
